@@ -2,38 +2,39 @@
 
 int main(void)
 {
-    int numberOfTerms;
-    int first = 0;
-    int second = 1;
-    int next;
+    int number;
+    int isPrime = 1;
 
-    /* Display program title */
-    printf("========================================\n");
-    printf("      Fibonacci Series Generator\n");
-    printf("========================================\n");
+    printf("=====================================\n");
+    printf("       Prime Number Checker\n");
+    printf("=====================================\n");
 
-    /* Get input from the user */
-    printf("Enter the number of Fibonacci terms: ");
-    scanf("%d", &numberOfTerms);
+    /* Get input from user */
+    printf("Enter a positive integer: ");
+    scanf("%d", &number);
 
     /* Validate input */
-    if (numberOfTerms <= 0)
+    if (number <= 1)
     {
-        printf("\nError: Please enter a positive integer.\n");
-        return 1;
+        printf("\n%d is not a prime number.\n", number);
+        return 0;
     }
 
-    /* Display Fibonacci series */
-    printf("\nFirst %d Fibonacci Terms:\n\n", numberOfTerms);
-
-    for (int i = 1; i <= numberOfTerms; i++)
+    /* Check for factors */
+    for (int i = 2; i * i <= number; i++)
     {
-        printf("Term %2d : %d\n", i, first);
-
-        next = first + second;
-        first = second;
-        second = next;
+        if (number % i == 0)
+        {
+            isPrime = 0;
+            break;
+        }
     }
+
+    /* Display result */
+    if (isPrime)
+        printf("\n%d is a Prime Number.\n", number);
+    else
+        printf("\n%d is Not a Prime Number.\n", number);
 
     printf("\nProgram executed successfully.\n");
 
