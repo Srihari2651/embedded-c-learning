@@ -2,30 +2,31 @@
 
 int main(void)
 {
-    int n;
+    int numberOfTerms;
     int first = 0;
     int second = 1;
     int next;
 
-    printf("=====================================\n");
+    /* Display program title */
+    printf("========================================\n");
     printf("      Fibonacci Series Generator\n");
-    printf("=====================================\n");
+    printf("========================================\n");
 
-    /* Get user input */
+    /* Get input from the user */
     printf("Enter the number of Fibonacci terms: ");
-    scanf("%d", &n);
+    scanf("%d", &numberOfTerms);
 
     /* Validate input */
-    if (n <= 0)
+    if (numberOfTerms <= 0)
     {
         printf("\nError: Please enter a positive integer.\n");
         return 1;
     }
 
-    printf("\nFirst %d Fibonacci Terms:\n", n);
+    /* Display Fibonacci series */
+    printf("\nFirst %d Fibonacci Terms:\n\n", numberOfTerms);
 
-    /* Generate Fibonacci Series */
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i <= numberOfTerms; i++)
     {
         printf("Term %2d : %d\n", i, first);
 
